@@ -18,7 +18,7 @@ def get_prospects(file_path:str):
 
 @app.command()
 def make_json(file_name:str):
-    person_titles = input("Enter Person Titles (Seperated By 1  Comma): ")
+    person_titles = person_titles = typer.prompt(typer.style("Enter Person Titles (Seperated By 1  Comma): ", fg=typer.colors.BLACK, bg=typer.colors.WHITE))
 
     data = {"api_key": os.environ.get('API_KEY'),"person_titles": person_titles.split(","), "page":0}
     with open(f"{file_name}.json", "w") as file:
