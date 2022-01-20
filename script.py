@@ -1,13 +1,15 @@
 import requests
 from csv import writer
-import os
 
 def getprospects(data, headers):
 	people = []
 	# for er in emplRange:
 	wr = writer(open('names.csv','a', newline=""))
 	for i in range(0,10):
-		result = requests.post("https://api.apollo.io/v1/mixed_people/search", headers=headers, data=data%(os.environ.get('API_KEY'), i))
+		data["page"] = i
+		result = requests.post("https://api.apollo.io/v1/mixed_people/search", headers=headers, data=str(data))
+		print(data)
+		print(result)
 		if(result.status_code != 200):
 			print("Error")
 			continue
