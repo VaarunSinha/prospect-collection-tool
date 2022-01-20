@@ -22,4 +22,4 @@ For step by step guide on how to use this program go to technical-docs.md file.
 ### Challenges We Faced:
 
 - API Docs were down for the first day.
-- Not one of us had experience with typer or how to make a CLI.
+- Not one of us had experience with typer.
